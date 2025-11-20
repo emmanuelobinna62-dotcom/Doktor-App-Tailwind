@@ -1,0 +1,668 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" href="./dist/output.css"> -->
+  <link href="./output.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+   <script src="https://cdn.tailwindcss.com"></script>
+   <title>My TailWnd project</title>
+
+</head>
+
+<body class="overflow-x-hidden">
+
+  <header>
+    <nav class="md:flex hidden justify-around  bg-white pt-8 pb-6 pr-10 pl-4 items-start">
+      <div class=" logo pl-3 md:mt-3" ><a href="#"><img src="/src/logo-green.webp" alt="Logo" class="w-[400px] md:w-32 h-auto mr-6 "></a>
+      </div>
+      <div class=" dropdown-menu h-0">
+        <ul class=" md:flex md:flex-row flex flex-col justify-center items-center gap-10 pr-8 text-sm font-semibold">
+          <li class=" md:text-black active:underline hover:underline focus-within:underline"><a href="#">Home</a></li>
+          <li class="active:underline hover:underline focus-within:underline"><a href="#">About Us</a></li>
+              <!-- Dropdown Parent -->
+    <li class="relative group">
+      <button class="flex items-center gap-1 active:underline hover:underline">
+        Products
+        <i class="fa fa-caret-down text-sm"></i>
+      </button>
+
+      <!-- Dropdown Menu -->
+      <ul
+        class="absolute left-0 mt-2 w-50 bg-white text-gray-800 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 group-hover:translate-y-1 transform transition-all duration-300 invisible group-hover:visible z-20"
+      >
+        <li class="px-4 py-2 hover:bg-[#3DCCCB]"><a href="#">TeleMedicine/Telehealth</a></li>
+        <li class="px-4 py-2 hover:bg-[#3DCCCB]"><a href="#">Health and Well-being</a></li>
+        <li class="px-4 py-2 hover:bg-[#3DCCCB]"><a href="#">Health Insurance</a></li>
+        <li class="px-4 py-2 hover:bg-[#3DCCCB]"><a href="#">Home Care</a></li>
+        <li class="px-4 py-2 hover:bg-[#3DCCCB]"><a href="#">Phamarcies</a></li>
+        <li class="px-4 py-2 hover:bg-[#3DCCCB]"><a href="#">Store</a></li>
+      </ul>
+    </li>
+    <li class="relative group">
+      <button class="flex items-center gap-1 active:underline hover:underline">
+        Services
+        <i class="fa fa-caret-down text-sm"></i>
+      </button>
+
+      <!-- Dropdown Menu -->
+      <ul
+        class="absolute left-0 mt-2 w-50 bg-white text-gray-800 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 group-hover:translate-y-1 transform transition-all duration-300 invisible group-hover:visible z-20">
+        <li class="px-4 py-2 hover:bg-[#3DCCCB]"><a href="#">Personal</a></li>
+        <li class="px-4 py-2 hover:bg-[#3DCCCB]"><a href="#">Companies</a></li>
+        <li class="px-4 py-2 hover:bg-[#3DCCCB]"><a href="#">HMOS</a></li>
+        <li class="px-4 py-2 hover:bg-[#3DCCCB]"><a href="#">Hospital Clinics</a></li>
+        <li class="px-4 py-2 hover:bg-[#3DCCCB]"><a href="#">Health Providers</a></li>
+      </ul>
+    
+          <li class="active:underline hover:underline focus-within:underline"><a href="#">Blog</a></li>
+              <li class="relative group">
+      <button class="flex items-center gap-1 active:underline hover:underline">
+        FAQs/Help Desk
+        <i class="fa fa-caret-down text-sm"></i>
+      </button>
+
+      <!-- Dropdown Menu -->
+      <ul
+        class="absolute left-0 mt-2 w-50 bg-white text-gray-800 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 group-hover:translate-y-1 transform transition-all duration-300 invisible group-hover:visible z-20"
+      >
+        <li class="px-4 py-2 hover:bg-[#3DCCCB]"><a href="#">Contact</a></li>
+      </ul>
+  
+      <li class=" hover:underline active:underline focus-within:underline"><a href="#">Practitioner’s Portal</a></li>
+      </ul>
+      </div>
+      <div class=" flex justify-center items-center border-0 bg-transparent pr-18"><button class="flex place-items-center gap-2 bg-[#3DCCCB] text-white px-4 py-2 rounded-3xl hover:bg-white hover:text-black transition-colors duration-300 ease-in">
+  <i class="fas fa-mobile-alt"></i>
+</i>
+
+  <span class=" font-bold text-sm py-1">Download App</span>
+</button>
+</div>
+    </nav>
+
+    <i class=" md:hidden flex items-start justify-start toggle-bar fa fa-bars mt-6 pl-4" aria-hidden="true"></i>
+
+    <!-- Mobile Menu -->
+
+    <div class="mobile-menu bg-white w-full md:hidden flex flex-col space-y-4 items-start  text-lg font-semibold  h-screen  ">
+
+      <div class="  logo pl-8 md:mt-3 ml-20"  ><a href="#"><img src="/src/logo-green.webp" alt="Logo" class="w-[300px] md:w-32 h-auto mr-6 "></a></div>
+     
+
+      <a href="" class="mt-3 ml-3"> Home</a>
+      <a href="" class="ml-3">About Us</a>
+      <!-- dropdown menu -->
+      <div class=" relative">
+        <a href="" id="dropdown-btn" class="block py-2 cursor-pointer ml-3 ">Products ❯ </a>
+        <div id="dropdown-Menu" class=" hidden absolute left-full top-0 mt-1 font-normal w-auto text-sm  gap-3 h-auto">
+
+          <ul class="space-y-3  pl-20 ">
+            <li><a href="#" class="hover:underline cursor-pointer">TeleMedicine/Telehealth</a></li>
+            <li><a href="" class="hover:underline cursor-pointer">Health and Well-being</a></li>
+            <li><a href="" class="hover:underline cursor-pointer">Health Insurance</a></li>
+            <li><a href="" class="hover:underline cursor-pointer">Home Care</a></li>
+            <li><a href="" class="hover:underline cursor-pointer">Phamarcies</a></li>
+            <li><a href="" class="hover:underline cursor-pointer">Store</a></li>
+            
+          </ul>
+
+
+
+        </div>
+      </div>
+
+      <div class=" relative">
+        <a href="" id="dropdown-serv" class="block py-2 cursor-pointer ml-3 ">Services ❯ </a>
+        <div id="dropdown-meserve" class=" hidden absolute left-full top-0 mt-1 font-normal w-auto text-sm  gap-3 h-auto">
+
+          <ul class="space-y-3  pl-32">
+            <li><a href="#" class="hover:underline cursor-pointer">Personal</a></li>
+            <li><a href="" class="hover:underline cursor-pointer">Companies</a></li>
+            <li><a href="" class="hover:underline cursor-pointer">HMOs</a></li>
+            <li><a href="" class="hover:underline cursor-pointer">Hospital Clinics</a></li>
+            <li><a href="" class="hover:underline cursor-pointer">Health Providers</a></li>
+           
+            
+          </ul>
+
+
+
+        </div>
+      </div>
+      <a href="" class="ml-3">Blog</a>
+
+      <div class=" relative">
+        <a href="" id="dropdown-Faq" class="block py-2 cursor-pointer ml-3 ">FAQs/ Help Desk ❯ </a>
+        <div id="dropdown-meFaq" class=" hidden absolute left-full top-0 mt-1 font-normal w-auto text-sm  gap-3 h-auto">
+
+          <ul class="space-y-3  pl-4">
+            <li><a href="#" class="hover:underline cursor-pointer">Contact</a></li>
+
+            
+          </ul>
+
+
+
+        </div>
+      </div>
+      <a href="" class="mb-3 ml-3">Practitioner’s Portal</a>
+      
+
+
+    </div>
+
+  </header>
+  <Main>
+    <!-- first Section -->
+    <div class="relative w-full h-screen overflow-hidden">
+      <!-- slide wrapper -->
+      <div id="slider" class="flex transition-transform duration-700 ease-in-out">
+        <!-- slide 1 -->
+        <div class="w-full h-screen flex-shrink-0 bg-cover bg-center flex items-center justify-start text-black pl-5"
+              style="background-image: url(/src/slide1pics.jpg);">
+              <div class=" text-2xl leading-normal mb-2 flex flex-col pl-8">
+                <h1 class="font-bold md:text-5xl md:mb-8 md:leading-10">Put World-Class </h1>
+                <h1 class="font-bold md:text-5xl md:mb-8 md:leading-10 mb-4">Health Care In Your Hands </h1>
+                <p class=" text-sm md:text-xl leading-normal mb-4 md:mb-0">Support your health with virtual Consultations from <br> local & International healthcare Providers</p>
+            <div class="flex">
+              <a href="#">
+                <img src="/src/googleplay.png" alt="googleApp" class=" md:w-[250px] md:h-auto md:mt-3 w-[150px] mr-3 md:mr-0">
+              </a>
+              <a href="#">
+                <img src="/src/appleplay.png" alt="Appleapp" class=" md:w-[250px] md:h-auto md:mt-2 md:mb-2 w-[150px]">
+              </a>
+            </div>
+              </div>
+            
+
+        </div>
+          <!-- Slide 2 -->
+        <!-- <div class="w-full h-screen flex-shrink-0 bg-cover bg-center flex items-center justify-start text-black pl-5"
+              style="background-image: url(/src/premium_photo-1661373242314-bc93c4e1e5f1.avif);">
+              <div class="block pl-8">
+                <h1 class="font-bold text-5xl mb-8 leading-10">Take Your medical Practice </h1>
+                <h1 class="font-bold text-5xl mb-8 leading-10">Online With Doktorzz </h1>
+                <p class="text-xl">Set up your virtual clinic in minutes and provide virtual Consultations</p>
+                <button class="bg-[#33BEC0] mt-4 py-3 px-6 font-medium text-2xl text-white rounded-full">Sign Up As A Practictioner</button>
+                <div class="flex mt-3">
+                  <p class="text-xl">Already An Existing User?</p>
+                  <a href=""><p class="text-xl ml-3 text-[#33BEC0] font">Log In</p></a>
+                </div>
+              </div>
+              
+        </div> -->
+
+          <!-- Slide 3 -->
+        <div class="w-full h-screen flex-shrink-0 bg-cover bg-center flex items-center justify-start text-black pl-5"
+              style="background-image: url(/src/premium_photo-1681967053996-4275be0191e7.avif);">
+              <div class="block pl-8">
+                <h1 class="font-bold text-2xl md:text-5xl mb-1 md:mb-8 leading-10">Take Your medical Practice </h1>
+                <h1 class="font-bold text-2xl md:text-5xl mb-8 leading-10">Online With Doktorzz </h1>
+                <p class=" text-sm md:text-xl">Set up your virtual clinic in minutes and provide virtual Consultations</p>
+                <button class="bg-[#33BEC0] mt-4 py-3 px-2 md:px-6 font-normal md:font-medium text-xs md:text-2xl text-white rounded-full hover:bg-[#0092FF] ease-in duration-300">Sign Up As A Practictioner</button>
+                <div class="flex mt-3">
+                  <p class="md:text-xl text-sm ">Already An Existing User?</p>
+                  <a href=""><p class="md:text-xl text-sm ml-3 text-[#33BEC0] font-bold">Log In</p></a>
+                </div>
+              </div>
+        </div>
+
+        
+
+      </div>
+
+      <button onclick="moveSlide(-1)"
+              class="absolute left-5 top-1/2 transform -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white px-4 py-2 rounded-full">
+        <
+      </button>
+      <button onclick="moveSlide(1)"
+              class="absolute right-5 top-1/2 transform -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white px-4 py-2 rounded-full"">
+        >
+      </button>
+      
+          <script>
+            let index = 0;
+            const slides = document.getElementById("slider");
+            const totalSlides = slides.children.length;
+
+             function moveSlide(step) {
+              index = (index + step + totalSlides) % totalSlides;
+              slides.style.transform = `translateX(-${index * 100}%)`;
+                 }
+
+                // Auto slide every 5 seconds
+              setInterval(() => moveSlide(1), 5000);
+          </script>
+
+    </div>
+
+    <!-- Second Section -->
+
+    <div class=" flex items-center justify-center">
+      <div class=" my-20 block md:flex md:w-auto w-full md:mx-40">
+      <div class="mb-6 flex items-center justify-center"><img src="/src/telemedicine-1.webp" alt="telemedicine" class="md:w-[1000px] "></div>
+      <div class=" ml-10">
+        <p class=" mr-4 leading-loose text-[15px] text-[#647589]">Doktorzz connects you to a network of multi-speciality local and international
+           healthcare providers (doctors, nurses, optometrists, psychologists, and health coaches) 
+           who provide virtual medical consultations, expert medical advice and post-consultation services referrals,
+            prescriptions, lab imaging test requests and certificates) from the comfort of your phone. </p>
+        <p class="  mr-4 mt-[15px] text-[15px] text-[#647589]">With the Doktorzz app you can select from a range 
+            of multi-speciality healthcare providers who offer flexible & affordable pricing.
+             Getting the support you require for your health is as simple as searching for a doctor,
+              booking a session and paying seamlessly</p>
+        <a href="#"><p class="mt-10 font-extrabold">Read More</p></a>
+      </div>
+    </div>
+    </div>
+
+    <!-- Third Section -->
+
+    <div>
+      <div class=" bg-[url(/src/zoom_bg_1.webp)] bg-clip-padding h-[80vh] my-6 flex justify-center items-center flex-col" >
+        <h1 class="font-bold text-4xl md:mx-0">See How It Works</h1>
+        <iframe class=" rounded-2xl mt-10 w-[90vw] h-[215px] mx-6 md:w-[600px] md:h-[315px]"  src="https://www.youtube.com/embed/zKguO4oaAGs?si=l5QqvayzhGx8tO15" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <!-- fourth Section -->
+
+    <!-- biggest cover -->
+
+    <div>
+      <!-- container for H1 and others -->
+      <div class=" block md:flex flex-col items-center justify-center pt-10">
+        <div class="mb-10 flex items-center justify-center">
+          <h1 class="text-[36px] font-bold text-[#33BEC0] pl-12">App Features</h1>
+        </div>
+        <div class=" block md:flex flex-row mr-20 ml-10">
+          <div class="mt-20 md:mx-10 mx-4">
+            <div class="mb-20 md:text-left text-center">
+              <h3 class="font-bold text-[18px] text-[#1E1E1E]">Virtual Medical Consultations</h3>
+              <p class=" md:text-left text-center font-normal text-[15px] text-[#647589] mb-[15px]">Speak to healthcare providers in real time via <br> video calls.</p>
+            </div>
+            <div class="mb-20 md:text-left text-center">
+              <h3 class="font-bold text-[18px] text-[#1E1E1E]">Multi speciality</h3>
+              <p class="font-normal text-[15px] text-[#647589] mb-[15px]">Find specialists for your different health needs.</p>
+            </div>
+            <div class="md:text-left text-center md:mb-0 mb-20">
+              <h3 class="font-bold text-[18px] text-[#1E1E1E]">Health education</h3>
+              <p class="font-normal text-[15px] text-[#647589] mb-[15px]">Explore articles and health tips from trusted medical experts.</p>
+            </div>
+          </div>
+          <div><img src="/src/features2-1.webp" alt="Features"></div>
+          <div class="mt-20 text-center md:text-right mx-2">
+            <div class="mb-20">
+              <h3 class="font-bold text-[18px] text-[#1E1E1E]">Affordable</h3>
+              <p class="font-normal text-[15px] text-[#647589] mb-[15px]">Compare rates from different healthcare <br> providers and choose the best fit.</p>
+            </div>
+            <div class="mb-20 text-center md:text-right">
+              <h3 class="font-bold text-[18px] text-[#1E1E1E]">360 Healthcare</h3>
+              <p class="font-normal text-[15px] text-[#647589] mb-[15px]">Get referrals, prescriptions and medical tests <br> done quickly with our network of partners.</p>
+            </div>
+            <div class=" text-center md:text-right md:mb-0 mb-14">
+              <h3 class="font-bold text-[18px] text-[#1E1E1E]">Digital Health Records</h3>
+              <p class="font-normal text-[15px] text-[#647589] mb-[15px]">Access your electronic health records from anywhere.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- fifth section -->
+
+    <div class="md:h-[100vh] h-[90vh]  flex justify-center items-center pt-6">
+      <div class=" md:flex md:flex-row w-full md:h-[80%] h-fit flex-col ">
+        <div class="bg-[#D7FFFF] h-[100%] w-full flex items-center justify-center flex-col">
+          <div class="mt-8"><h3 class="font-bold text-[31px] text-[#1E1E1E] text-center leading-none">Your automated <br>virtual clinic</h3></div>
+          <div><button class="bg-[#33BEC0] py-2 px-12 font-medium text-lg text-white rounded-full mt-4 mb-4 hover:animate-bounce">Sign Up</button></div>
+          <div class="md:mb-1 mb-3"><p>Learn more about signing up as a healthcare provider >>></p></div>
+        </div>
+        <!-- <div class=" bg-[url('/src/phone.jpeg')] bg-cover bg-center w-full h-[100%] flex flex-col justify-center items-center"> -->
+        <div class=" py-10 md:py-0 relative w-full h-[100%] bg-cover bg-center flex flex-col justify-center items-center " 
+              style="background-image: url('/src/phone.jpeg')">
+              <!-- Dark overlay  -->
+          <div class="absolute inset-0 bg-black/50"></div>
+          <ul class=" py-0 md:py-8 list-disc list-inside text-white text-center font-semibold text-[18px] leading-loose z-20">
+            <li class="mb-2"> Get access to professional learning & development</li>
+            <li class="mb-2"> Manage patient records digitally</li>
+            <li class="mb-2"> Share your expertise & connect with peers</li>
+            <li class="mb-2"> Expand your medical practice & reach more patients</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- FAQ section -->
+
+    <div class="h-screen md:pt-6 pt-20">
+<div class="md:w-[90%] w-[90%] md:mx-20 mx-0 md:px-10 pl-6 md:py-10 space-y-4 ">
+  <!-- FAQ 1 -->
+  <div class="border rounded overflow-hidden">
+    <button
+      class="w-full text-left p-4 font-semibold flex justify-between items-center faq-toggle bg-[#33BEC0]"
+    >
+      <span>Individuals</span>
+      <i class="fa fa-chevron-down transition-transform duration-300"></i>
+    </button>
+    <div
+      class="faq-content max-h-0 overflow-hidden transition-all duration-800 ease-in-out text-gray-600 px-4"
+    >
+      <p class="py-10">
+       We are your safe space for connecting with multi-speciality healthcare providers
+        from across the world. Here, you will find virtual medical consultations that prioritise
+        your needs and provide active post-consultation services to help you get better.
+      </p>
+    </div>
+  </div>
+
+  <!-- FAQ 2 -->
+  <div class="border rounded overflow-hidden">
+    <button
+      class="w-full text-left p-4 font-semibold flex justify-between items-center faq-toggle bg-[#33BEC0]"
+    >
+      <span>HealthCare Providers</span>
+      <i class="fa fa-chevron-down transition-transform duration-300"></i>
+    </button>
+    <div
+      class="faq-content max-h-0 overflow-hidden transition-all duration-800 ease-in-out text-gray-600 px-4"
+    >
+      <p class="py-10">
+        We are taking away all the technical and administrative difficulties 
+        associated with setting up a virtual clinic. Doktorzz provides access to seamless 
+        payment, transferable digital records, learning opportunities and prompt customer service.
+
+      </p>
+    </div>
+  </div>
+
+  <!-- FAQ 3 -->
+  <div class="border rounded overflow-hidden">
+    <button
+      class="w-full text-left p-4 font-semibold flex justify-between items-center faq-toggle bg-[#33BEC0]"
+    >
+      <span>Health Management Organizations</span>
+      <i class="fa fa-chevron-down transition-transform duration-300"></i>
+    </button>
+    <div
+      class="faq-content max-h-0 overflow-hidden transition-all duration-800 ease-in-out text-gray-600 px-4"
+    >
+      <p class="py-10">
+        Expand your offerings to include virtual consultations with 
+        world-class healthcare providers. This proactive service improves
+         access to quality healthcare for your users and reduces the frequency 
+         of physical visits and treatment.
+      </p>
+    </div>
+  </div>
+
+  <!-- FAQ 4 -->
+    <div class="border rounded overflow-hidden">
+    <button
+      class="w-full text-left p-4 font-semibold flex justify-between items-center faq-toggle bg-[#33BEC0]"
+    >
+      <span>Government</span>
+      <i class="fa fa-chevron-down transition-transform duration-300"></i>
+    </button>
+    <div
+      class="faq-content max-h-0 overflow-hidden transition-all duration-800 ease-in-out text-gray-600 px-4"
+    >
+      <p class="py-10">
+        We are keen to partner with governments across all levels to 
+        improve access to healthcare for all. Our proprietary technology can 
+        support on-site consultations by improving patient diagnosis and empowering
+         the medical personnel in these facilities who can rely on our experts for a second 
+         opinion and additional resources.
+      </p>
+    </div>
+  </div>
+
+  <!-- FAQ 5 -->
+    <div class="border rounded overflow-hidden">
+    <button
+      class="w-full text-left p-4 font-semibold flex justify-between items-center faq-toggle bg-[#33BEC0]"
+    >
+      <span>Phamarcies</span>
+      <i class="fa fa-chevron-down transition-transform duration-300"></i>
+    </button>
+    <div
+      class="faq-content max-h-0 overflow-hidden transition-all duration-800 ease-in-out text-gray-600 px-4"
+    >
+      <p class="py-10">
+       Partner with us to expand your customer base. Our network of healthcare 
+       providers will actively refer clients to your business. Our technology can 
+       also add extra value to your physical locations with “Ask an expert” booths
+        powered by our network of healthcare providers, allowing your customers to book 
+        instant virtual consultations that improve their experience.
+      </p>
+    </div>
+  </div>
+
+  <!-- FAQ 6 -->
+    <div class="border rounded overflow-hidden">
+    <button
+      class="w-full text-left p-4 font-semibold flex justify-between items-center faq-toggle bg-[#33BEC0]"
+    >
+      <span>Lab & Diagnostic Centres</span>
+      <i class="fa fa-chevron-down transition-transform duration-300"></i>
+    </button>
+    <div
+      class="faq-content max-h-0 overflow-hidden transition-all duration-800 ease-in-out text-gray-600 px-4"
+    >
+      <p class="py-10">
+       Yes, we ship internationally to selected countries with additional shipping fees.
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+  const toggles = document.querySelectorAll(".faq-toggle");
+
+  toggles.forEach((toggle) => {
+    toggle.addEventListener("click", () => {
+      const content = toggle.nextElementSibling;
+      const icon = toggle.querySelector("i");
+
+      // Close all other FAQs
+      document.querySelectorAll(".faq-content").forEach((item) => {
+        if (item !== content) {
+          item.style.maxHeight = null;
+          item.previousElementSibling
+            .querySelector("i")
+            .classList.remove("rotate-180");
+        }
+      });
+
+      // Toggle this FAQ
+      if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+        icon.classList.remove("rotate-180");
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+        icon.classList.add("rotate-180");
+      }
+    });
+  });
+</script>
+
+
+
+
+
+
+    </div>
+
+    <!-- section 7 -->
+    <div class="md:h-[90vh] h-[auto] px-10 md:pr-32 bg-[#042424] md:pt-20 pt-20 md:pb-0 pb-20">
+      <div class="  md:pl-16 pl-0 md:flex block items-center justify-around md:pr-20 pr-0 w-full md:mr-24 mr-0 md:h-[100%] h-[90%] md:mb-0 md:text-left text-center">
+        <div class=" md:w-full w-[100%]  md:mb-0 mb-16 md:pb-0 flex flex-col justify-center md:justify-around ">
+          <div class=" font-bold text-[31px] text-white leading-none mb-4" ><h3>Download The <br>Doktorzz App</h3></div>
+          <div class="text-[14px] font-[400]  text-white mb-4 md:w-fit w-[100%] md:mx-0 mr-4 "><p class="md:w-fit w-[100%]">Get access to virtual consultations from local & <br> international healthcare
+                   providers to support your health</p>
+          </div>
+          <div class="md:flex items-center block md:pl-0 pl-32 ">
+            <a href="">
+              <img src="/src/googleplay.png" alt="googleApp" class="w-[200px] h-auto mt-3">
+            </a>
+            <a href="">
+              <img src="/src/appleplay.png" alt="Appleapp" class="w-[200px] h-auto mt-2">
+            </a>
+          </div>
+        </div>
+        <div class="flex items-start md:mt:0 pt:8 md:w-[100%] w-auto"><img src="/src/section-7-image.webp" alt="Appimage"></div>
+
+      </div>
+    </div>
+
+    <!-- section 8 -->
+
+    <div class="md:h-screen h-[120vh]">
+      <div class=" md:pt-0 pt-16 relative h-screen bg-cover bg-center md:flex block justify-around"style="background-image: url(/src/file2.avif)"> 
+        <div class="absolute inset-0 bg-gradient-to-l from-white/90 to-transparent"></div>
+
+        <div class="z-20  flex items-center flex-col justify-center w-full"> 
+          <div class="font-bold text-black text-3xl mb-2 z-50"><h>Contact us</h2></div>
+          <div class="text-[19px] font-[300] z-50"><p>Send us a message, let’s hear from you.</p></div>
+        </div>
+        <div class="w-full bg mt-10 md:mx-20 ml-8">
+          <form action="#" class="relative z-20 flex flex-col md:w-auto  md:mr-4  ">
+
+            <label for="name" class="font-[500] text-[18px] mb-2">Name</label>
+            <input type="text" name="fullname" id="name" required class="bg-[#D9D9D9] focus:outline-none rounded-2xl  p-3 mr-12 mb-6">
+            <label for="email" class="font-[500] text-[18px] mb-2" >Email</label>
+            <input type="email" name="useremail" id="email" required class="bg-[#D9D9D9] focus:outline-none rounded-2xl border-black-900 p-3 mr-12 mb-6">
+            <label for="comment" class="font-[500] text-[18px] mb-2" >Message</label>
+            <textarea name="comment" required id="comment" class="bg-[#D9D9D9] focus:outline-none rounded-2xl border-black-900 mr-12 p-3 h-[200px] mb-6 "></textarea>
+            <button type="submit" class="font-[500] text-[18px] bg-black text-white p-3 mr-12 rounded-2xl border">Send Message</button>
+
+
+
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+  
+
+  </Main>
+  <Footer>
+    <div class="md:flex md:flex-col md:pt-0 pt-20 md:items-center md:justify-center md:h-[80vh] h-[250vh] bg-[#1E1E1E] flex-col  md:w-auto w-auto md:mt-0 mt-10">
+      <div class=" md:flex w-full justify-center items-start mb-6 md:mt-0 mt-14 block md:h-auto h-auto ">
+        <div class="mr-12 flex flex-col md:justify-center md:items-start items-center ">
+          <div class="w-[260px] mb-6"><a href=""><img src="/src/logo-green.webp" alt=""></a></div>
+          <div class="font-semibold md:text-[19px] text-[15px] md:mr-16 mr-0  text-white md:mb-2 mb-4 md:text-left text-center"><h4>Put world-class healthcare <br>in your hands <br>Download the Doktorzz app <br> today.</h4></div>
+          <div>
+            <div class="md:flex md:flex-row flex flex-col">
+              <a href="#">
+                <img src="/src/googleplay.png" alt="googleApp" class="w-[200px] h-auto mt-3">
+              </a>
+              <a href="#">
+                <img src="/src/appleplay.png" alt="Appleapp" class="w-[200px] h-auto mt-2 mb-2">
+              </a>
+            </div>
+            
+          </div>
+        </div>
+        <div class="  md:flex md:flex-row justify-between gap-6 flex flex-col md:items-start items-center  md:text-left text-center">
+          <div class=" md:text-left text-center">
+            <div><h3 class=" md:pr-0 pr-3 font-bold text-[23px] md:text-left text-center text-white   md:mb-2 mb-4 md:mt-0 mt-8">Menu</h3></div>
+            <div>
+              <ul class="md:leading-9 leading-9 font-semibold text-base text-white pr-6 flex flex-col">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Practitioner’s Portal</a></li>
+                <li><a href="#">Companies</a></li>
+                <li><a href="#">FAQs</a></li>
+
+              </ul>
+            </div>
+          </div>
+          <div>
+            <div><h3 class=" md:pr-0 pr-3 font-bold text-[23px] text-white md:mb-2 mb-6">Important Links</h3></div>
+            <div>
+              <ul class="md:leading-9 leading-9 font-semibold text-base text-white pr-6">
+                <li><a href="#">Health and Well-being</a></li>
+                <li><a href="#">Health Insurance</a></li>
+                <li><a href="#">HMOs</a></li>
+                <li><a href="#">Hospitals and Clinics</a></li>
+                <li><a href="#">Home Care</a></li>
+                <li><a href="#">Telemedicine/Telehealth</a></li>
+                <li><a href="#">Store</a></li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <div><h3 class="font-bold text-[23px] text-white mb-6 md:mt-0 mt-6">Socials</h3></div>
+            <div class="mb-14">
+              <a href="#"><span class="bg-amber-50 py-2 px-2 rounded-full" ><i class="fa-brands fa-facebook"></i></span></a>
+              <a href="#"><span class="bg-amber-50 py-2 px-2 rounded-full" ><i class="fa-brands fa-twitter"></i></span></a>
+              <a href="#"><span class="bg-amber-50 py-2 px-2 rounded-full" ><i class="fa-brands fa-instagram"></i></span></a>
+              <a href="#"><span class="bg-amber-50 py-2 px-2 rounded-full" ><i class="fa-brands fa-linkedin"></i></span></a>
+              
+            </div>
+            <div>
+              <form class="flex flex-col">
+                <h2 class="font-bold text-[23px] text-white mb-2">Subscribe</h2>
+                <label for="Email" class="text-[#7E7E7E] leading-loose font-bold text-base">Email <span class="text-[#ff0000] font-[400]">*</span></label>
+                <input type="email" name="useremail" id="Email" required class="bg-[#33BEC0] focus:outline-none rounded-2xl  md:p-3 py-3 md:mr-16  mr-0 mb-6 md:w-[200px] w-[500px]">
+                <button type="submit" class="bg-[#33BEC0] w-[100px] py-3 rounded-2xl border-black">Submit</button>
+              </form>
+            </div>
+          </div>
+          </div>
+      </div >
+      <div class="text-center text-[#9aacbb] font-normal text-[15px]"><p>Copyright &copy; 2025 Doktorzz. All rights reserved Copyright. <br>Designed By Emmanuel Dev.</p></div>
+    </div>
+  </Footer>
+
+  <script>
+
+
+  const togglebtn = document.querySelector(".toggle-bar");
+  const mobilemenu= document.querySelector(".mobile-menu");
+  
+
+  togglebtn.addEventListener("click", () => {
+    mobilemenu.classList.toggle('hidden')
+  })
+
+  const dropdownbtn = document.getElementById("dropdown-btn")
+  const dropdownmenu= document.getElementById("dropdown-Menu")
+
+  dropdownbtn.addEventListener("click", () => {
+    event.preventDefault();
+    dropdownmenu.classList.toggle('hidden')
+  })
+
+  const dropdownserv = document.getElementById("dropdown-serv")
+  const dropdownmeserve= document.getElementById("dropdown-meserve")
+
+ dropdownserv.addEventListener("click", () => {
+    event.preventDefault();
+    dropdownmeserve.classList.toggle('hidden')
+  })
+  
+  const dropdownfaq = document.getElementById("dropdown-Faq")
+  const dropdownmefaq= document.getElementById("dropdown-meFaq")
+
+ dropdownfaq.addEventListener("click", () => {
+    event.preventDefault();
+    dropdownmefaq.classList.toggle('hidden')
+  })
+
+
+
+
+
+</script>
+  
+</body>
+</html>
